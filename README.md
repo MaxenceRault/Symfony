@@ -12,6 +12,6 @@ raultmaxence05@gmail.com
 4. créer la base de données : `php bin/console doctrine:database:create`
 5. exécuter les migrations : `php bin/console doctrine:migrations:migrate`
 6. lancer le serveur symfony : `symfony server:start`
-
 7. (optionnel) Commande pour vider le cache du projet : `php bin/console cache:clear`
+8. Pour les roles : ROLE_SUPER_ADMIN ; ROLE_ADMIN ; ROLE_USER , il faut modifier directement la bdd pour pouvoir avoir les permission
 

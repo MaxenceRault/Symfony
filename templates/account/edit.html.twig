@@ -3,12 +3,15 @@
 {% block title %}{{ 'profile.edit_title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
 
 {% block body %}
-<h1>{{ 'profile.edit_heading'|trans({}, 'messages', app.request.locale) }}</h1>
+<div class="profile-edit-container">
+    <h1>{{ 'profile.edit_heading'|trans({}, 'messages', app.request.locale) }}</h1>
 
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit" class="btn btn-success">{{ 'profile.save_button'|trans({}, 'messages', app.request.locale) }}</button>
-{{ form_end(form) }}
-
-<a href="{{ path('account') }}" class="btn btn-secondary">{{ 'profile.cancel_button'|trans({}, 'messages', app.request.locale) }}</a>
+    {{ form_start(form, { attr: { class: 'profile-edit-form' } }) }}
+        {{ form_widget(form) }}
+        <div class="profile-edit-buttons">
+            <button type="submit" class="btn btn-success">{{ 'profile.save_button'|trans({}, 'messages', app.request.locale) }}</button>
+            <a href="{{ path('account') }}" class="btn btn-secondary">{{ 'profile.cancel_button'|trans({}, 'messages', app.request.locale) }}</a>
+        </div>
+    {{ form_end(form) }}
+</div>
 {% endblock %}

@@ -63,7 +63,7 @@ unpaid_carts:
   content: Contenu
 
 logout:
-  logout: Déconnexion
+  logout: Se déconnecter
   login: Connexion
   register: Inscription
 

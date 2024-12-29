@@ -1,0 +1,264 @@
+/* Conteneur principal */
+.account-container {
+    max-width: 60rem; /* 960px */
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB; /* Bordure grise */
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Titre principal */
+.account-title {
+    font-size: 2rem; /* 32px */
+    color: #1E40AF; /* Bleu principal */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Sous-titres */
+.account-section-title {
+    font-size: 1.5rem; /* 24px */
+    color: #1E293B; /* Gris foncé */
+    margin-bottom: 1rem;
+}
+
+/* Informations utilisateur */
+.account-info p {
+    font-size: 1rem;
+    color: #4B5563; /* Gris moyen */
+    margin: 0.5rem 0;
+}
+
+.account-info .btn-primary {
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #1E40AF;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.account-info .btn-primary:hover {
+    background-color: #0F172A;
+}
+
+/* Tableau des commandes */
+.account-orders table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.account-orders table th,
+.account-orders table td {
+    border: 1px solid #E5E7EB; /* Bordure grise claire */
+    padding: 1rem;
+    text-align: left;
+}
+
+.account-orders table th {
+    background-color: #F1F5F9; /* Gris clair */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1E293B;
+}
+
+.account-orders table tr:nth-child(even) {
+    background-color: #F9FAFB; /* Alternance de couleurs */
+}
+
+.account-orders .btn-secondary {
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #6B7280; /* Gris */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.account-orders .btn-secondary:hover {
+    background-color: #4B5563;
+}
+
+/* Message lorsqu'il n'y a pas de commandes */
+.account-no-orders {
+    text-align: center;
+    font-size: 1rem;
+    color: #4B5563;
+    margin-top: 2rem;
+}
+
+
+
+/* Conteneur principal pour la modification du profil */
+.profile-edit-container {
+    max-width: 50rem; 
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB; 
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+
+.profile-edit-container h1 {
+    font-size: 2rem; 
+    color: #1E40AF; 
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.profile-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.profile-edit-form input,
+.profile-edit-form textarea,
+.profile-edit-form select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #F9FAFB; 
+    box-shadow: inset 0 0.1rem 0.3rem rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-edit-form input:focus,
+.profile-edit-form textarea:focus,
+.profile-edit-form select:focus {
+    border-color: #1E40AF;
+    box-shadow: 0 0 0 0.2rem rgba(30, 64, 175, 0.25);
+}
+
+
+.profile-edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.profile-edit-buttons .btn-success {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #10B981; 
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-edit-buttons .btn-success:hover {
+    background-color: #059669;
+}
+
+.profile-edit-buttons .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #6B7280; 
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-edit-buttons .btn-secondary:hover {
+    background-color: #4B5563;
+}
+
+
+/* Conteneur principal pour les détails de la commande */
+.order-detail-container {
+    max-width: 60rem; 
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #E5E7EB; 
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+
+.order-detail-container h1 {
+    font-size: 2rem; 
+    color: #1E40AF; 
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+.order-detail-container p {
+    font-size: 1rem;
+    color: #4B5563; 
+    margin: 0.5rem 0;
+}
+
+
+.order-detail-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.order-detail-container table th,
+.order-detail-container table td {
+    border: 1px solid #E5E7EB; 
+    padding: 1rem;
+    text-align: left;
+}
+
+.order-detail-container table th {
+    background-color: #F1F5F9; 
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1E293B;
+}
+
+.order-detail-container table tr:nth-child(even) {
+    background-color: #F9FAFB; 
+}
+
+
+.order-total {
+    font-size: 1.25rem; 
+    font-weight: bold;
+    color: #1E293B; 
+    text-align: right;
+    margin-top: 1rem;
+}
+
+
+.order-detail-container .btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #6B7280; 
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-detail-container .btn-secondary:hover {
+    background-color: #4B5563;
+}

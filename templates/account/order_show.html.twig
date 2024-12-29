@@ -3,31 +3,33 @@
 {% block title %}{{ 'order.title'|trans({'%id%': order.id}, 'messages', app.request.locale) }}{% endblock %}
 
 {% block body %}
-<h1>{{ 'order.detail'|trans({'%id%': order.id}, 'messages', app.request.locale) }}</h1>
-<p>{{ 'order.date'|trans({}, 'messages', app.request.locale) }} : {{ order.dateAchat|date('d/m/Y H:i') }}</p>
+<div class="order-detail-container">
+    <h1>{{ 'order.detail'|trans({'%id%': order.id}, 'messages', app.request.locale) }}</h1>
+    <p>{{ 'order.date'|trans({}, 'messages', app.request.locale) }} : {{ order.dateAchat|date('d/m/Y H:i') }}</p>
 
-<table>
-    <thead>
-        <tr>
-            <th>{{ 'order.product'|trans({}, 'messages', app.request.locale) }}</th>
-            <th>{{ 'order.quantity'|trans({}, 'messages', app.request.locale) }}</th>
-            <th>{{ 'order.unit_price'|trans({}, 'messages', app.request.locale) }}</th>
-            <th>{{ 'order.total'|trans({}, 'messages', app.request.locale) }}</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for contenu in order.contenuPaniers %}
+    <table>
+        <thead>
             <tr>
-                <td>{{ contenu.produit.title }}</td>
-                <td>{{ contenu.quantite }}</td>
-                <td>{{ contenu.produit.price }} €</td>
-                <td>{{ contenu.quantite * contenu.produit.price }} €</td>
+                <th>{{ 'order.product'|trans({}, 'messages', app.request.locale) }}</th>
+                <th>{{ 'order.quantity'|trans({}, 'messages', app.request.locale) }}</th>
+                <th>{{ 'order.unit_price'|trans({}, 'messages', app.request.locale) }}</th>
+                <th>{{ 'order.total'|trans({}, 'messages', app.request.locale) }}</th>
             </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            {% for contenu in order.contenuPaniers %}
+                <tr>
+                    <td>{{ contenu.produit.title }}</td>
+                    <td>{{ contenu.quantite }}</td>
+                    <td>{{ contenu.produit.price }} €</td>
+                    <td>{{ contenu.quantite * contenu.produit.price }} €</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-<p>{{ 'order.total_amount'|trans({}, 'messages', app.request.locale) }} : {{ total }} €</p>
+    <p class="order-total">{{ 'order.total_amount'|trans({}, 'messages', app.request.locale) }} : {{ total }} €</p>
 
-<a href="{{ path('account') }}" class="btn btn-secondary">{{ 'order.back_to_account'|trans({}, 'messages', app.request.locale) }}</a>
+    <a href="{{ path('account') }}" class="btn btn-secondary">{{ 'order.back_to_account'|trans({}, 'messages', app.request.locale) }}</a>
+</div>
 {% endblock %}

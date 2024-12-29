@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('styles/auth.css') }}" />
     <link rel="stylesheet" href="{{ asset('styles/cart.css') }}" />
     <link rel="stylesheet" href="{{ asset('styles/error.css') }}" />
+    <link rel="stylesheet" href="{{ asset('styles/account.css') }}" />
     {% block stylesheets %}
 
     {% endblock %}
@@ -34,6 +35,18 @@
         <li class="header__menu-item">
         <a href="/" class="header__link">{{ 'home.title'|trans({}, 'messages', app.request.locale) }}</a>
         </li>
+        {% if is_granted('ROLE_SUPER_ADMIN') %}
+        <li class="header__menu-item">
+          <a href="{{ path('superadmin_users_today') }}" class="header__link">{{ 'superadmin.users_today'|trans({}, 'messages', app.request.locale) }}</a>
+        </li>
+        <li class="header__menu-item">
+          <a href="{{ path('superadmin_paniers') }}" class="header__link">{{ 'superadmin.unpaid_carts'|trans({}, 'messages', app.request.locale) }}</a>
+        </li>
+        
+        {% endif %}
+        <li class="header__menu-item">
+        <a href="{{ path('app_cart') }}" class="header__link">{{ 'cart.cart'|trans({}, 'messages', app.request.locale) }}</a>
+        </li>
         {% if app.user is not null %}
         <li class="header__menu-item">
           <a href="{{ path('account') }}" class="header__link">{{ 'Account.My_account'|trans({}, 'messages', app.request.locale)  }}</a>
@@ -49,17 +62,8 @@
           <a href="{{ path('app_register') }}" class="header__link">{{ 'register.title'|trans({}, 'messages', app.request.locale) }}</a>
         </li>
         {% endif %}
-        <li class="header__menu-item">
-        <a href="{{ path('app_cart') }}" class="header__link">{{ 'cart.cart'|trans({}, 'messages', app.request.locale) }}</a>
-        </li>
-        {% if is_granted('ROLE_SUPER_ADMIN') %}
-        <li class="header__menu-item">
-          <a href="{{ path('superadmin_paniers') }}" class="header__link">{{ 'superadmin.unpaid_carts'|trans({}, 'messages', app.request.locale) }}</a>
-        </li>
-        <li class="header__menu-item">
-          <a href="{{ path('superadmin_users_today') }}" class="header__link">{{ 'superadmin.users_today'|trans({}, 'messages', app.request.locale) }}</a>
-        </li>
-        {% endif %}
+        
+        
       </ul>
       <div id="language-switcher" class="language-switcher" style="position: relative; display: inline-block;">
         <!-- Bouton avec un globe -->
