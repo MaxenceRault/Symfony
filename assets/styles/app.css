@@ -1,0 +1,12 @@
+body {
+    background-color: white;
+}
+
+.success{
+    background-color: lightgreen;
+}
+
+.error{
+    background-color: lightcoral;
+}
+

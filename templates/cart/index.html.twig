@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'cart.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<div class="cart-container">
+    <h1>{{ 'cart.title'|trans({}, 'messages', app.request.locale) }}</h1>
+
+    {% if panier %}
+        <table>
+            <thead>
+                <tr>
+                    <th>{{ 'cart.product'|trans({}, 'messages', app.request.locale) }}</th>
+                    <th>{{ 'cart.quantity'|trans({}, 'messages', app.request.locale) }}</th>
+                    <th>{{ 'cart.unit_price'|trans({}, 'messages', app.request.locale) }}</th>
+                    <th>{{ 'cart.total'|trans({}, 'messages', app.request.locale) }}</th>
+                    <th>{{ 'cart.action'|trans({}, 'messages', app.request.locale) }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contenu in panier.contenuPaniers %}
+                    <tr>
+                        <td>{{ contenu.produit.title }}</td>
+                        <td>{{ contenu.quantite }}</td>
+                        <td>{{ contenu.produit.price }} €</td>
+                        <td>{{ contenu.quantite * contenu.produit.price }} €</td>
+                        <td>
+                            <a href="{{ path('cart_remove', { id: contenu.id }) }}" class="btn btn-danger">{{ 'cart.remove'|trans({}, 'messages', app.request.locale) }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <p>{{ 'cart.total'|trans({}, 'messages', app.request.locale) }} : {{ total }} €</p>
+        <a href="{{ path('cart_checkout') }}" class="btn btn-success">{{ 'cart.checkout'|trans({}, 'messages', app.request.locale) }}</a>
+    {% else %}
+        <p>{{ 'cart.empty'|trans({}, 'messages', app.request.locale) }}</p>
+    {% endif %}
+</div>
+{% endblock %}

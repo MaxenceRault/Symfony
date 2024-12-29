@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'users_today.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 class="page-title">{{ 'users_today.page_title'|trans({}, 'messages', app.request.locale) }}</h1>
+
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>{{ 'users_today.email'|trans({}, 'messages', app.request.locale) }}</th>
+                <th>{{ 'users_today.registration_date'|trans({}, 'messages', app.request.locale) }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.createdAt|date('d/m/Y H:i') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

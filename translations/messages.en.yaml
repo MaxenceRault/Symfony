@@ -1,0 +1,150 @@
+home:
+  title: Home
+  add_product: Add Product
+  product_list: Product List
+  add_to_cart: Add to Cart
+  edit_product: Edit Product
+  delete_product: Delete Product
+  total: Total
+  checkout: Checkout
+  price: Price
+  view_product: View Product
+
+Account:
+  My_account: My Account
+
+account:
+  title: My Account
+  edit_profile: Edit My Profile
+  name: Name
+  firstname: First Name
+  email: Email
+  edit_profile_button: Edit Profile
+  order_history: Order History
+  order_id: Order ID
+  order_date: Order Date
+  order_amount: Order Amount
+  order_action: Action
+  view_order: View Order
+  no_orders: You have no orders
+
+order:
+  title: Order Details #%id%
+  detail: Order Details #%id%
+  date: Order Date
+  product: Product
+  quantity: Quantity
+  unit_price: Unit Price
+  total: Total
+  total_amount: Total Amount
+  back_to_account: Back to Account
+
+profile:
+  edit_title: Edit Profile
+  edit_heading: Edit Your Profile
+  save_button: Save
+  cancel_button: Cancel
+
+superadmin:
+  unpaid_carts: Unpaid Carts
+  users_today: Users Registered Today
+
+users_today:
+  title: Users Registered Today
+  page_title: Users Registered Today
+  email: Email
+  registration_date: Registration Date
+
+unpaid_carts:
+  title: Unpaid Carts
+  page_title: Unpaid Carts
+  cart_number: Cart Number
+  user: User
+  content: Content
+
+logout:
+  logout: Logout
+  login: Login
+  register: Register
+
+cart:
+  cart: Cart
+  title: My Cart
+  product: Product
+  quantity: Quantity
+  unit_price: Unit Price
+  total: Total
+  action: Action
+  remove: Remove
+  empty: Your cart is empty
+  checkout: Checkout
+
+product:
+  title: Title
+  content: Description
+  price: Price
+  stock: Quantity
+  image: Image
+  add_to_cart: Add to Cart
+  edit: Edit Product
+  back_to_home: Back to Home
+  delete: Delete Product
+  save: Save
+  cancel: Cancel
+  edit_title: Edit Product
+
+flash:
+  error_upload: "Error uploading file"
+  product_added: "Product added"
+  login_required: "You must be logged in to access this page"
+  added_to_cart: "Product added to cart"
+  product_updated: "Product updated"
+  product_deleted: "Product deleted"
+  profile_updated: "Profile updated"
+  access_denied: "Access denied"
+  cart_empty: "Your cart is empty"
+  insufficient_stock: "Insufficient stock for %product%"
+  order_validated: "Your order has been validated"
+  product_removed: "Product removed from cart"
+
+login:
+  title: Login
+  sign_in: Sign In
+  email: Email
+  password: Password
+  remember_me: Remember Me
+  sign_in_button: Sign In
+  logged_in_as: Logged in as %username%
+  logout: Logout
+
+register:
+  title: Register
+  header: Create an Account
+  nom: Last Name
+  prenom: First Name
+  email: Email
+  password: Password
+  submit: Register
+
+error:
+  title: Error
+  message: An error occurred
+  page_title: Page Not Found
+  access_denied: Access Denied
+  no_permission: You do not have permission to access this page
+
+error.404:
+  title: Page Not Found
+  message: The page you are looking for does not exist
+
+error.500:
+  title: Internal Server Error
+  message: An internal server error occurred
+
+
+footer:
+  link1: About Us
+  link2: Contact Us
+  social_facebook: Facebook
+  social_twitter: Twitter
+  copyright: All rights reserved.

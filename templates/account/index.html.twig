@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ 'account.title'|trans({}, 'messages', app.request.locale) }}
+{% endblock %}
+
+{% block body %}
+  <h1>{{ 'account.title'|trans({}, 'messages', app.request.locale) }}</h1>
+
+  <h2>{{ 'account.edit_profile'|trans({}, 'messages', app.request.locale) }}</h2>
+  <p>{{ 'account.name'|trans({}, 'messages', app.request.locale) }} : {{ user.nom }}</p>
+  <p>{{ 'account.firstname'|trans({}, 'messages', app.request.locale) }} : {{ user.prenom }}</p>
+  <p>{{ 'account.email'|trans({}, 'messages', app.request.locale) }} : {{ user.email }}</p>
+  <a href="{{ path('account_edit') }}" class="btn btn-primary">{{ 'account.edit_profile_button'|trans({}, 'messages', app.request.locale) }}</a>
+
+  <h2>{{ 'account.order_history'|trans({}, 'messages', app.request.locale) }}</h2>
+  {% if orders %}
+    <table>
+      <thead>
+        <tr>
+          <th>{{ 'account.order_id'|trans({}, 'messages', app.request.locale) }}</th>
+          <th>{{ 'account.order_date'|trans({}, 'messages', app.request.locale) }}</th>
+          <th>{{ 'account.order_amount'|trans({}, 'messages', app.request.locale) }}</th>
+          <th>{{ 'account.order_action'|trans({}, 'messages', app.request.locale) }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for orderWithTotal in orders %}
+          {% set order = orderWithTotal.order %}
+          <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.dateAchat|date('d/m/Y H:i') }}</td>
+            <td>{{ orderWithTotal.total }} €</td>
+            <td>
+              <a href="{{ path('order_show', { id: order.id }) }}" class="btn btn-secondary">{{ 'account.view_order'|trans({}, 'messages', app.request.locale) }}</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>{{ 'account.no_orders'|trans({}, 'messages', app.request.locale) }}</p>
+  {% endif %}
+{% endblock %}

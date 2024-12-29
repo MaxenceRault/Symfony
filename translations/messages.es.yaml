@@ -1,0 +1,150 @@
+home:
+  title: Inicio
+  add_product: Añadir Producto
+  product_list: Lista de Productos
+  add_to_cart: Añadir al carrito
+  edit_product: Editar Producto
+  delete_product: Eliminar Producto
+  total: Total
+  checkout: Finalizar Compra
+  price: Precio
+  view_product: Ver Producto
+
+Account:
+  My_account: Mi Cuenta
+
+account:
+  title: Mi Cuenta
+  edit_profile: Editar Mi Perfil
+  name: Nombre
+  firstname: Nombre de pila
+  email: Correo electrónico
+  edit_profile_button: Editar Perfil
+  order_history: Historial de Pedidos
+  order_id: ID del Pedido
+  order_date: Fecha del Pedido
+  order_amount: Monto del Pedido
+  order_action: Acción
+  view_order: Ver Pedido
+  no_orders: No tienes pedidos
+
+order:
+  title: Detalles del Pedido #%id%
+  detail: Detalles del Pedido #%id%
+  date: Fecha del Pedido
+  product: Producto
+  quantity: Cantidad
+  unit_price: Precio unitario
+  total: Total
+  total_amount: Monto total
+  back_to_account: Volver a la cuenta
+
+profile:
+  edit_title: Editar Perfil
+  edit_heading: Editar tu Perfil
+  save_button: Guardar
+  cancel_button: Cancelar
+
+superadmin:
+  unpaid_carts: Carritos No Pagados
+  users_today: Usuarios Registrados Hoy
+
+users_today:
+  title: Usuarios de Hoy
+  page_title: Usuarios Registrados Hoy
+  email: Correo Electrónico
+  registration_date: Fecha de Registro
+
+unpaid_carts:
+  title: Carritos No Pagados
+  page_title: Carritos No Pagados
+  cart_number: Número de Carrito
+  user: Usuario
+  content: Contenido
+
+logout:
+  logout: Cerrar Sesión
+  login: Iniciar Sesión
+  register: Registrarse
+
+cart:
+  cart: Carrito
+  title: Mi Carrito
+  product: Producto
+  quantity: Cantidad
+  unit_price: Precio unitario
+  total: Total
+  action: Acción
+  remove: Eliminar
+  empty: Tu carrito está vacío
+  checkout: Finalizar Compra
+
+product:
+  title: Título
+  content: Descripción
+  price: Precio
+  stock: Cantidad
+  image: Imagen
+  add_to_cart: Añadir al carrito
+  edit: Editar Producto
+  back_to_home: Volver a Inicio
+  delete: Eliminar Producto
+  save: Guardar
+  cancel: Cancelar
+  edit_title: Editar Producto
+
+flash:
+  error_upload: "Error al subir el archivo"
+  product_added: "Producto añadido"
+  login_required: "Debes iniciar sesión para acceder a esta página"
+  added_to_cart: "Producto añadido al carrito"
+  product_updated: "Producto actualizado"
+  product_deleted: "Producto eliminado"
+  profile_updated: "Perfil actualizado"
+  access_denied: "Acceso denegado"
+  cart_empty: "El carrito está vacío"
+  insufficient_stock: "Stock insuficiente para el producto %product%"
+  order_validated: "Pedido validado con éxito"
+  product_removed: "Producto eliminado del carrito"
+
+login:
+  title: Iniciar Sesión
+  sign_in: Iniciar Sesión
+  email: Correo electrónico
+  password: Contraseña
+  remember_me: Recuérdame
+  sign_in_button: Iniciar Sesión
+  logged_in_as: Conectado como %username%
+  logout: Cerrar Sesión
+
+register:
+  title: Registrarse
+  header: Crear una cuenta
+  nom: Apellido
+  prenom: Nombre
+  email: Correo electrónico
+  password: Contraseña
+  submit: Registrarse
+
+error:
+  title: Error
+  message: Ha ocurrido un error
+  page_title: Página no encontrada
+  access_denied: Acceso denegado
+  no_permission: No tienes permiso para acceder a esta página
+
+error.404:
+  title: Página no encontrada
+  message: La página que buscas no existe
+
+error.500:
+  title: Error interno del servidor
+  message: Ha ocurrido un error interno del servidor
+
+
+footer:
+  link1: Enlace 1
+  link2: Enlace 2
+  social_facebook: Facebook
+  social_twitter: Twitter
+  copyright: Todos los derechos reservados

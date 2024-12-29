@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'home.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<h1>{{ 'home.product_list'|trans({}, 'messages', app.request.locale) }}</h1>
+
+{% if is_granted('ROLE_ADMIN') %}
+    <h2>{{ 'home.add_product'|trans({}, 'messages', app.request.locale) }}</h2>
+    <button id="openModal" class="btn btn-primary">{{ 'home.add_product'|trans({}, 'messages', app.request.locale) }}</button>
+    
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>{{ 'home.add_product'|trans({}, 'messages', app.request.locale) }}</h2>
+            
+            <div class="form-container">
+            {{ form(ajout_produit) }}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<div class="product-list">
+    {% for product in products %}
+        <div class="product-item">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.content }}</p>
+            <p>{{ 'home.price'|trans({}, 'messages', app.request.locale) }} : {{ product.price }}€</p>
+            <img src="{{ asset('uploads/' ~ product.image) }}" alt="{{ product.title}}" class="product-image">
+            <a href="{{ path('product_show', { id: product.id }) }}" class="btn btn-secondary">{{ 'home.view_product'|trans({}, 'messages', app.request.locale) }}</a>
+        </div>
+    {% else %}
+        <p>{{ 'home.no_products'|trans({}, 'messages', app.request.locale) }}</p>
+    {% endfor %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('modal');
+        const openModal = document.getElementById('openModal');
+        const closeModal = document.getElementById('closeModal');
+
+        openModal.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+    });
+</script>
+{% endblock %}

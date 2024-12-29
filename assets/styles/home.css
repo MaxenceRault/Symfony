@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #1E40AF;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 75rem;
+    padding: 0 1rem;
+}
+
+.product-item {
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+.product-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1E293B;
+}
+
+.product-item p {
+    font-size: 1rem;
+    color: #4B5563;
+    margin: 0.5rem 0;
+}
+
+.product-item p:nth-child(3) {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #10B981;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1E40AF;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0F172A;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+    max-width: 40rem;
+    width: 100%;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+}

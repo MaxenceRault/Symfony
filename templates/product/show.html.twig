@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  {{ product.title }}
+{% endblock %}
+
+{% block body %}
+  <div class="product-page">
+    <!-- Colonne image -->
+    <div class="product-page__image">
+      <img src="{{ asset('uploads/' ~ product.image) }}" alt="{{ product.title }}" />
+    </div>
+
+    <!-- Colonne informations -->
+    <div class="product-page__info">
+      <h1 class="product-page__title">{{ product.title }}</h1>
+      <p class="product-page__description">{{ 'product.content'|trans({}, 'messages', app.request.locale) }} : {{ product.content }}</p>
+      <p class="product-page__price">{{ 'product.price'|trans({}, 'messages', app.request.locale) }} : {{ product.price }} €</p>
+      <p class="product-page__stock">{{ 'product.stock'|trans({}, 'messages', app.request.locale) }} : {{ product.stock }}</p>
+
+      {% if is_granted('ROLE_USER') %}
+        <div class="product-page__btn-group">
+          <form method="post" action="{{ path('cart_add', { id: product.id }) }}">
+            <button type="submit" class="product-page__btn product-page__btn--add-to-cart">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H6.4m.6 8l-1.6 7H20m-9-4h3" />
+              </svg>{{ 'product.add_to_cart'|trans({}, 'messages', app.request.locale) }}
+            </button>
+          </form>
+          <a href="{{ path('home') }}" class="product-page__btn product-page__btn--back">{{ 'product.back_to_home'|trans({}, 'messages', app.request.locale) }}</a>
+        </div>
+      {% else %}
+        <p class="product-page__warning">{{ 'product.login_to_add_to_cart'|trans({}, 'messages', app.request.locale) }}</p>
+      {% endif %}
+
+      {% if is_granted('ROLE_ADMIN') %}
+        <div class="product-page__btn-group">
+          <a href="{{ path('product_edit', { id: product.id }) }}" class="product-page__btn product-page__btn--edit">{{ 'product.edit'|trans({}, 'messages', app.request.locale) }}</a>
+          <form method="post" action="{{ path('product_delete', { id: product.id }) }}">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}" />
+            <button type="submit" class="product-page__btn product-page__btn--delete">{{ 'product.delete'|trans({}, 'messages', app.request.locale) }}</button>
+          </form>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

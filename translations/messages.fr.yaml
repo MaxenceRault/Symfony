@@ -1,0 +1,151 @@
+home:
+  title: Accueil
+  add_product: Ajouter un produit
+  product_list: Liste des produits
+  add_to_cart: Ajouter au panier
+  edit_product: Modifier le produit
+  delete_product: Supprimer le produit
+  total: Total
+  checkout: Valider mon panier
+  price: Prix
+  view_product: Voir le produit
+
+Account:
+  My_account: Mon Compte
+
+account:
+  title: Mon compte
+  edit_profile: Modifier mon profil
+  name: Nom
+  firstname: Prénom
+  email: Email
+  edit_profile_button: Modifier le profil
+  order_history: Historique des commandes
+  order_id: ID de la commande
+  order_date: Date de la commande
+  order_amount: Montant de la commande
+  order_action: Action
+  view_order: Voir la commande
+  no_orders: Vous n'avez pas de commandes
+
+order:
+  title: Détails de la commande #%id%
+  detail: Détails de la commande #%id%
+  date: Date de la commande
+  product: Produit
+  quantity: Quantité
+  unit_price: Prix unitaire
+  total: Total
+  total_amount: Montant total
+  back_to_account: Retour au compte
+
+profile:
+  edit_title: Modifier le profil
+  edit_heading: Modifier votre profil
+  save_button: Sauvegarder
+  cancel_button: Annuler
+
+superadmin:
+  unpaid_carts: Paniers non payés
+  users_today: Utilisateurs inscrits aujourd'hui
+
+users_today:
+  title: Utilisateurs inscrits aujourd'hui
+  page_title: Liste des utilisateurs inscrits aujourd'hui
+  email: Email
+  registration_date: Date d'inscription
+
+unpaid_carts:
+  title: Paniers non payés
+  page_title: Liste des paniers non payés
+  cart_number: Numéro du panier
+  user: Utilisateur
+  content: Contenu
+
+logout:
+  logout: Déconnexion
+  login: Connexion
+  register: Inscription
+
+cart:
+  cart: Panier
+  title: Mon Panier
+  product: Produit
+  quantity: Quantité
+  unit_price: Prix unitaire
+  total: Total
+  action: Action
+  remove: Retirer
+  empty: Votre panier est vide
+  checkout: Valider mon panier
+
+product:
+  title: Titre
+  content: Description
+  price: Prix
+  stock: Quantité
+  image: Image
+  add_to_cart: Ajouter au panier
+  edit: Modifier le produit
+  back_to_home: Retour à l'accueil
+  delete: Supprimer le produit
+  save: Sauvegarder
+  cancel: Annuler
+  edit_title: Modifier le Produit
+
+flash:
+  error_upload: "Erreur lors de l'envoi du fichier"
+  product_added: "Produit ajouté"
+  login_required: "Vous devez être connecté pour accéder à cette page"
+  added_to_cart: "Produit ajouté au panier"
+  product_updated: "Produit mis à jour"
+  product_deleted: "Produit supprimé"
+  profile_updated: "Profil mis à jour"
+  access_denied: "Accès refusé"
+  cart_empty: "Votre panier est vide"
+  insufficient_stock: "Stock insuffisant pour le produit %product%"
+  order_validated: "Commande validée"
+  product_removed: "Produit retiré du panier"
+
+login:
+  title: Connexion
+  logged_in_as: Connecté en tant que %username%
+  logout: Déconnexion
+  sign_in: Se connecter
+  email: Email
+  password: Mot de passe
+  remember_me: Se souvenir de moi
+  sign_in_button: Se connecter
+
+register:
+  title: Inscription
+  header: Créer un compte
+  nom: Nom
+  prenom: Prénom
+  email: Email
+  password: Mot de passe
+  submit: S'inscrire
+
+
+error:
+  title: Erreur
+  message: Une erreur est survenue
+  page_title: Page non trouvée
+  access_denied: Accès refusé
+  no_permission: Vous n'avez pas la permission d'accéder à cette page
+
+error.404:
+  title: Page non trouvée
+  message: La page que vous recherchez n'existe pas
+
+error.500:
+  title: Erreur interne du serveur
+  message: Une erreur interne du serveur est survenue
+
+
+footer : 
+  link1: Mentions légales
+  link2: Politique de confidentialité
+  social_facebook: Facebook
+  social_twitter: Twitter
+  copyright: Tous droits réservés

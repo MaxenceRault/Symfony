@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'order.title'|trans({'%id%': order.id}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<h1>{{ 'order.detail'|trans({'%id%': order.id}, 'messages', app.request.locale) }}</h1>
+<p>{{ 'order.date'|trans({}, 'messages', app.request.locale) }} : {{ order.dateAchat|date('d/m/Y H:i') }}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>{{ 'order.product'|trans({}, 'messages', app.request.locale) }}</th>
+            <th>{{ 'order.quantity'|trans({}, 'messages', app.request.locale) }}</th>
+            <th>{{ 'order.unit_price'|trans({}, 'messages', app.request.locale) }}</th>
+            <th>{{ 'order.total'|trans({}, 'messages', app.request.locale) }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contenu in order.contenuPaniers %}
+            <tr>
+                <td>{{ contenu.produit.title }}</td>
+                <td>{{ contenu.quantite }}</td>
+                <td>{{ contenu.produit.price }} €</td>
+                <td>{{ contenu.quantite * contenu.produit.price }} €</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p>{{ 'order.total_amount'|trans({}, 'messages', app.request.locale) }} : {{ total }} €</p>
+
+<a href="{{ path('account') }}" class="btn btn-secondary">{{ 'order.back_to_account'|trans({}, 'messages', app.request.locale) }}</a>
+{% endblock %}

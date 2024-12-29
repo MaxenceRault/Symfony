@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'login.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<div class="auth-form-container">
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security', app.request.locale) }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3">
+                {{ 'login.logged_in_as'|trans({'%username%': app.user.userIdentifier}, 'messages', app.request.locale) }}, <a href="{{ path('app_logout') }}">{{ 'login.logout'|trans({}, 'messages', app.request.locale) }}</a>
+            </div>
+        {% endif %}
+
+        <h1 class="h3 mb-3 font-weight-normal">{{ 'login.sign_in'|trans({}, 'messages', app.request.locale) }}</h1>
+        <label for="inputEmail">{{ 'login.email'|trans({}, 'messages', app.request.locale) }}</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <label for="inputPassword">{{ 'login.password'|trans({}, 'messages', app.request.locale) }}</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> {{ 'login.remember_me'|trans({}, 'messages', app.request.locale) }}
+            </label>
+        </div>
+
+        <button class="btn btn-lg btn-primary" type="submit">{{ 'login.sign_in_button'|trans({}, 'messages', app.request.locale) }}</button>
+    </form>
+</div>
+{% endblock %}

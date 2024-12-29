@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'register.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<div class="auth-form-container">
+    <h1>{{ 'register.header'|trans({}, 'messages', app.request.locale) }}</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.nom, { label: 'register.nom'|trans({}, 'messages', app.request.locale) }) }}
+        {{ form_row(registrationForm.prenom, { label: 'register.prenom'|trans({}, 'messages', app.request.locale) }) }}
+        {{ form_row(registrationForm.email, { label: 'register.email'|trans({}, 'messages', app.request.locale) }) }}
+        {{ form_row(registrationForm.plainPassword, { label: 'register.password'|trans({}, 'messages', app.request.locale) }) }}
+
+        <button type="submit" class="btn">{{ 'register.submit'|trans({}, 'messages', app.request.locale) }}</button>
+    {{ form_end(registrationForm) }}
+</div>
+{% endblock %}

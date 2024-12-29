@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'product.edit_title'|trans({'%title%': product.title}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<div class="product-edit">
+    <h1 class="product-edit__title">{{ 'product.edit_title'|trans({'%title%': product.title}, 'messages', app.request.locale) }}</h1>
+
+    {{ form_start(form, { attr: { class: 'product-edit__form' } }) }}
+        {{ form_widget(form) }}
+        <div class="product-edit__btn-group">
+            <button type="submit" class="product-edit__btn product-edit__btn--save">{{ 'product.save'|trans({}, 'messages', app.request.locale) }}</button>
+            <a href="{{ path('product_show', { id: product.id }) }}" class="product-edit__btn product-edit__btn--cancel">{{ 'product.cancel'|trans({}, 'messages', app.request.locale) }}</a>
+        </div>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

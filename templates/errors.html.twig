@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}{{ 'error.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+		</title>
+		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+		<link rel="stylesheet" href="{{ asset('styles/error.css') }}" />
+		{% block stylesheets %}{% endblock %}
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="{{ path('category_list') }}">
+							{{ 'home.add_product'|trans({}, 'messages', app.request.locale) }}
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Messages flash -->
+		{% for type, messages in app.flashes %}
+			{% for msg in messages %}
+				<p class="{{ type }}">
+					{{ msg }}
+				</p>
+			{% endfor %}
+		{% endfor %}
+
+		<!-- Contenu principal -->
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+	</body>
+</html>
