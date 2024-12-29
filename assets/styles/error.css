@@ -1,31 +1,27 @@
-/* Conteneur principal */
 .error-container {
-    max-width: 50rem; /* 800px */
+    max-width: 50rem;
     margin: 5rem auto;
     padding: 2rem;
     background-color: #ffffff;
-    border: 1px solid #E5E7EB; /* Bordure grise */
+    border: 1px solid #E5E7EB;
     border-radius: 0.5rem;
     box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: Arial, sans-serif;
 }
 
-/* Titre des erreurs */
 .error-container h1 {
-    font-size: 2rem; /* 32px */
-    color: #DC2626; /* Rouge */
+    font-size: 2rem;
+    color: #DC2626;
     margin-bottom: 1.5rem;
 }
 
-/* Message des erreurs */
 .error-container p {
-    font-size: 1.2rem; /* 20px */
-    color: #4B5563; /* Gris foncé */
+    font-size: 1.2rem;
+    color: #4B5563;
     margin-bottom: 2rem;
 }
 
-/* Bouton ou lien retour */
 .error-container a,
 .error-container button {
     display: inline-block;
@@ -33,7 +29,7 @@
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background-color: #1E40AF; /* Bleu */
+    background-color: #1E40AF;
     border: none;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -46,24 +42,23 @@
     background-color: #0F172A;
 }
 
-/* Alertes flash */
 p.success {
-    color: #10B981; /* Vert */
-    background-color: #D1FAE5; /* Vert clair */
+    color: #10B981;
+    background-color: #D1FAE5;
     padding: 1rem;
     border-radius: 0.5rem;
 }
 
 p.error {
-    color: #DC2626; /* Rouge */
-    background-color: #FEE2E2; /* Rouge clair */
+    color: #DC2626;
+    background-color: #FEE2E2;
     padding: 1rem;
     border-radius: 0.5rem;
 }
 
 p.info {
-    color: #2563EB; /* Bleu */
-    background-color: #DBEAFE; /* Bleu clair */
+    color: #2563EB;
+    background-color: #DBEAFE;
     padding: 1rem;
     border-radius: 0.5rem;
 }
